@@ -1,7 +1,8 @@
-package com.springframwork.recipeproject;
+package com.springframework.recipeproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class RecipeprojectApplication {

@@ -1,24 +1,31 @@
 package com.springframework.recipeproject.domain;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
-public class UnitOfMeasure {
+public class Category {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String Id;
+	private Long Id;
+	
 	private String description;
+	
+	@ManyToMany(mappedBy = "categories")
+	private Set<Recipe> recipes;
 
-	public String getId() {
+	public Long getId() {
 		return Id;
 	}
 
-	public void setId(String id) {
-		this.Id = id;
+	public void setId(Long id) {
+		Id = id;
 	}
 
 	public String getDescription() {
@@ -28,6 +35,13 @@ public class UnitOfMeasure {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
+	public Set<Recipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(Set<Recipe> recipes) {
+		this.recipes = recipes;
+	} 
+
 }
